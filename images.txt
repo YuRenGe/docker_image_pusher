@@ -1,4 +1,4 @@
-vllm-ascend-last
+vllm-ascend-openeuler
 #支持私库
-quay.io/ascend/vllm-ascend:v0.11.0rc1
+quay.io/ascend/vllm-ascend:v0.11.0rc1-openeuler
 #支持指定架构
