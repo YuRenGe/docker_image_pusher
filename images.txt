@@ -1,4 +1,5 @@
-quay.io/ascend/vllm-ascend:v0.11.0rc1-openeuler
+quay.io/ascend/vllm-ascend:v0.11.0rc1-openeuler-arm64
 #支持私库
-quay.io/ascend/vllm-ascend:v0.11.0rc1-openeuler
+quay.io/ascend/vllm-ascend:v0.11.0rc1-openeuler-arm64
 #支持指定架构
+--platform linux/arm64
