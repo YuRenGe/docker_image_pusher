@@ -1,1 +1,1 @@
---platform linux/arm64 quay.io/ascend/vllm-ascend:v0.11.0rc2
+--platform linux/arm64 quay.io/ascend/vllm-ascend:v0.11.0rc2-openeuler
