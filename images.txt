@@ -1,1 +1,1 @@
-xprobe/xinference:nightly-main-cpu
+tuannguyen7gs/mineru-cpu
