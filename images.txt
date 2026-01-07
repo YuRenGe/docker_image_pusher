@@ -1,1 +1,1 @@
-tuannguyen7gs/mineru-cpu
+prom/prometheus:latest
