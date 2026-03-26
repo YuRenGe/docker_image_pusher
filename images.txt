@@ -1,1 +1,1 @@
-prom/node-exporter:latest
+quay.io/ascend/vllm-ascend:v0.17.0rc1-openeuler
