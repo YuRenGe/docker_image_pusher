@@ -1,2 +1,1 @@
-quay.io/ascend/vllm-ascend:v0.18.0-openeuler
---platform linux/arm64
+quay.io/ascend/vllm-ascend:v0.18.0-openeuler --platform linux/arm64
