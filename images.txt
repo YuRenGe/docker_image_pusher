@@ -1,1 +1,1 @@
-vllm/vllm-omni:v0.26.0
+--platform=linux/arm64 quay.io/ascend/vllm-ascend:nightly-releases-v0.30.0-openeuler
