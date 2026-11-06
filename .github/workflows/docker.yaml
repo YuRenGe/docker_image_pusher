@@ -25,6 +25,32 @@ jobs:
         df -hT
         echo "=============================================================================="
 
+# ========== 1. 预清理 + 迁移 containerd（必须在 maximize 之前） ==========
+    - name: Pre-clean & relocate containerd
+      run: |
+        set -e
+        # 停服务
+        sudo systemctl stop docker containerd 2>/dev/null || true
+
+        # 清空旧 docker 数据（消掉 WARNING，也避免占根盘）
+        sudo rm -rf /var/lib/docker/*
+
+        # 把 containerd 根目录迁到大盘（软链到 /var/lib/docker/containerd）
+        sudo mkdir -p /var/lib/docker/containerd
+        sudo rm -rf /var/lib/containerd
+        sudo ln -s /var/lib/docker/containerd /var/lib/containerd
+
+        # 根盘其他大目录清理
+        sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+        sudo rm -rf /usr/share/swift /usr/local/.ghcup /usr/lib/jvm
+        sudo apt-get clean
+        sudo rm -rf /var/lib/apt/lists/*
+        rm -rf /home/runner/actions-runner/cached/*/_diag/ 2>/dev/null || true
+
+        # 确认软链
+        ls -ld /var/lib/containerd
+        df -h /
+        
     # 增加可用磁盘空间
     - name: Maximize build space
       uses: easimon/maximize-build-space@master
